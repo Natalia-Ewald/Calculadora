@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="244.0" prefWidth="412.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="calculadora.CalculadoraController">
+   <children>
+      <Label layoutX="63.0" layoutY="48.0" text="Valor 1">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="63.0" layoutY="139.0" text="Valor 2">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtvalor1" layoutX="63.0" layoutY="83.0" />
+      <TextField fx:id="txtvalor2" layoutX="63.0" layoutY="171.0" />
+      <Button fx:id="btnsoma" layoutX="279.0" layoutY="49.0" mnemonicParsing="false" onAction="#somar" prefHeight="26.0" prefWidth="92.0" text="Soma" />
+      <Button fx:id="subtracao" layoutX="279.0" layoutY="95.0" mnemonicParsing="false" onAction="#subtracao" prefHeight="26.0" prefWidth="92.0" text="Subtração" />
+      <Button fx:id="divisao" layoutX="279.0" layoutY="139.0" mnemonicParsing="false" onAction="#divisao" prefHeight="26.0" prefWidth="92.0" text="Divisão" />
+      <Button fx:id="multiplicacao" layoutX="279.0" layoutY="183.0" mnemonicParsing="false" onAction="#multiplicacao" prefHeight="26.0" prefWidth="92.0" text="Multiplicação" />
+   </children>
+</AnchorPane>
