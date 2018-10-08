@@ -5,13 +5,19 @@
  */
 package calculadora;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
+import javax.management.Query;
 
 /**
  * FXML Controller class
@@ -36,7 +42,36 @@ public class LoginController implements Initializable {
     }    
 
     @FXML
-    private void entrar(ActionEvent event) {
+    private void entrar(ActionEvent event) throws IOException {
+       EntityManagerFactory emf = Persistence.createEntityManagerFactory("calculadora");
+       EntityManager em = emf.createEntityManager();
+       
+        Query query = em.createQuery("SELECT l FROM login as l WHERE l.usuario = :user");
+        query.setParameter("user", txtusuario.getText());
+        
+        
+        if(query.getResultList().isEmpty()){
+            Alert alert = new Alert (Alert.AlertType.WARNING);
+            alert.setHeaderText("O usuário não existe");
+            alert.showAndWait();
+        } else {
+            Calculadora c = (Calculadora) query.getSingleResult();
+            if (!c.getSenhalogin().equals(txtsenha.getText())){
+                Alert alert = new Alert (Alert.AlertType.WARNING);
+                alert.setHeaderText("Senha não confere ");
+                alert.showAndWait();
+            }
+            else{
+                FXMLLoader fxmlLoader = new FXMLLoader();
+                fxmlLoader.setLocation(getClass().getResource("br/edu/ifro/view/login.fxml"));
+                Scene scene = new Scene(fxmlLoader.load());
+                Stage stage = new Stage();
+                stage.setTitle("Login");
+                stage.setScene(scene);
+                stage.show();
+            }           
+          }
+    }
     }
     
-}
+
