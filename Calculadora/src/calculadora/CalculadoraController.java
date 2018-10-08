@@ -32,6 +32,8 @@ public class CalculadoraController implements Initializable {
     private Button divisao;
     @FXML
     private Button multiplicacao;
+    @FXML
+    private TextField txtresultado;
 
     /**
      * Initializes the controller class.
@@ -55,6 +57,10 @@ public class CalculadoraController implements Initializable {
 
     @FXML
     private void multiplicacao(ActionEvent event) {
+    }
+
+    @FXML
+    private void resultado(ActionEvent event) {
     }
     
 }
