@@ -31,6 +31,6 @@
             <Font name="System Bold" size="17.0" />
          </font>
       </Label>
-      <TextField fx:id="txtresultado" layoutX="63.0" layoutY="209.0" onAction="#resultado" />
+      <TextField fx:id="txtresultado" layoutX="63.0" layoutY="209.0" />
    </children>
 </AnchorPane>

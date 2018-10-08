@@ -45,22 +45,43 @@ public class CalculadoraController implements Initializable {
 
     @FXML
     private void somar(ActionEvent event) {
+        Double num1 = Double.parseDouble(txtvalor1.getText());
+        Double num2 = Double.parseDouble(txtvalor2.getText());
+        Double resultado = num1 + num2;
+
+        txtresultado.setText(resultado.toString());
     }
 
     @FXML
     private void subtracao(ActionEvent event) {
+        Double num1 = Double.parseDouble(txtvalor1.getText());
+        Double num2 = Double.parseDouble(txtvalor2.getText());
+        Double resultado = num1 - num2;
+        
+        txtresultado.setText(resultado.toString());
+
     }
 
     @FXML
     private void divisao(ActionEvent event) {
+        Double num1 = Double.parseDouble(txtvalor1.getText());
+        Double num2 = Double.parseDouble(txtvalor2.getText());
+        Double resultado = num1 / num2;
+    
+        txtresultado.setText(resultado.toString());
+
     }
 
     @FXML
     private void multiplicacao(ActionEvent event) {
+        Double num1 = Double.parseDouble(txtvalor1.getText());
+        Double num2 = Double.parseDouble(txtvalor2.getText());
+        Double resultado = num1 * num2;
+   
+        txtresultado.setText(resultado.toString());
+
     }
 
-    @FXML
-    private void resultado(ActionEvent event) {
-    }
+   
     
 }

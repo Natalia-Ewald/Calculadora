@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="198.0" prefWidth="339.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="calculadora.LoginController">
+   <children>
+      <Label layoutX="56.0" layoutY="38.0" text="Usuario">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="56.0" layoutY="109.0" text="Senha">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtusuario" layoutX="56.0" layoutY="64.0" />
+      <TextField fx:id="txtsenha" layoutX="56.0" layoutY="132.0" />
+      <Button fx:id="btnentrar" layoutX="251.0" layoutY="145.0" mnemonicParsing="false" onAction="#entrar" text="Entrar" />
+   </children>
+</AnchorPane>
