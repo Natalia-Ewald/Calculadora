@@ -12,6 +12,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 
 /**
  * FXML Controller class
@@ -50,6 +53,18 @@ public class CalculadoraController implements Initializable {
         Double resultado = num1 + num2;
 
         txtresultado.setText(resultado.toString());
+    
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("calculadora");
+        EntityManager em = emf.createEntityManager();
+    
+        Calculadora calculadora1 = new Calculadora();
+        calculadora1.setValor1(txtvalor1.getText());
+        calculadora1.setValor2(txtvalor2.getText());
+        calculadora1.setResultado(txtresultado.getText());
+        
+        em.getTransaction().begin();
+        em.persist(calculadora1);
+        em.getTransaction().commit();
     }
 
     @FXML
@@ -59,6 +74,20 @@ public class CalculadoraController implements Initializable {
         Double resultado = num1 - num2;
         
         txtresultado.setText(resultado.toString());
+
+  
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("calculadora");
+        EntityManager em = emf.createEntityManager();
+    
+        Calculadora calculadora1 = new Calculadora();
+        calculadora1.setValor1(txtvalor1.getText());
+        calculadora1.setValor2(txtvalor2.getText());
+        calculadora1.setResultado(txtresultado.getText());
+        
+        em.getTransaction().begin();
+        em.persist(calculadora1);
+        em.getTransaction().commit();
+    
 
     }
 
@@ -70,6 +99,19 @@ public class CalculadoraController implements Initializable {
     
         txtresultado.setText(resultado.toString());
 
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("calculadora");
+        EntityManager em = emf.createEntityManager();
+    
+        Calculadora calculadora1 = new Calculadora();
+        calculadora1.setValor1(txtvalor1.getText());
+        calculadora1.setValor2(txtvalor2.getText());
+        calculadora1.setResultado(txtresultado.getText());
+        
+        em.getTransaction().begin();
+        em.persist(calculadora1);
+        em.getTransaction().commit();
+        
+        
     }
 
     @FXML
@@ -80,6 +122,20 @@ public class CalculadoraController implements Initializable {
    
         txtresultado.setText(resultado.toString());
 
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("calculadora");
+        EntityManager em = emf.createEntityManager();
+    
+        Calculadora calculadora1 = new Calculadora();
+        calculadora1.setValor1(txtvalor1.getText());
+        calculadora1.setValor2(txtvalor2.getText());
+        calculadora1.setResultado(txtresultado.getText());
+        
+        em.getTransaction().begin();
+        em.persist(calculadora1);
+        em.getTransaction().commit();
+    
+    
+    
     }
 
    
