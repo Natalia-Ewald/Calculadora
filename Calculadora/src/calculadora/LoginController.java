@@ -18,6 +18,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javax.management.Query;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 
 /**
  * FXML Controller class
@@ -43,8 +46,8 @@ public class LoginController implements Initializable {
 
     @FXML
     private void entrar(ActionEvent event) throws IOException {
-       EntityManagerFactory emf = Persistence.createEntityManagerFactory("calculadora");
-       EntityManager em = emf.createEntityManager();
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("calculadora");
+        EntityManager em = emf.createEntityManager();
        
         Query query = em.createQuery("SELECT l FROM login as l WHERE l.usuario = :user");
         query.setParameter("user", txtusuario.getText());

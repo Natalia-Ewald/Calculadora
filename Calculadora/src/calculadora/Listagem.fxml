@@ -5,17 +5,27 @@
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.control.cell.*?>
 
 
 <AnchorPane id="AnchorPane" prefHeight="329.0" prefWidth="494.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="calculadora.ListagemController">
    <children>
       <TableView fx:id="tbHistorico" layoutX="25.0" layoutY="32.0" prefHeight="255.0" prefWidth="441.0">
         <columns>
-          <TableColumn prefWidth="61.0" text="Id" />
-          <TableColumn prefWidth="97.0" text="Valor 1" />
-            <TableColumn prefWidth="89.0" text="Valor 2" />
-            <TableColumn prefWidth="93.0" text="Operador" />
-            <TableColumn prefWidth="100.0" text="Resultado" />
+            
+            <TableColumn text="ID">
+            <cellValueFactory>
+                <PropertyValueFactory property="id"/>
+            </cellValueFactory>
+            </TableColumn>
+       
+            <TableColumn text="Valor 1">
+            <cellValueFactory>
+                <PropertyValueFactory property="valor1"/>
+            </cellValueFactory>
+            </TableColumn>
+       
+       
         </columns>
       </TableView>
    </children>
